@@ -4,9 +4,12 @@ import React, { useState } from "react";
 export const TodoList = () => {
     const [text, setText] = useState("")
     const [data, setData] = useState([])
+    const [copyData,setcopyData]=useState([])
+
     const handleSubmit = () => {
         if (text.trim() != "") {
             setData([...data, text])
+            setcopyData([...data,text])
         }
         setText('')
     }
@@ -14,8 +17,17 @@ export const TodoList = () => {
     const deleteData = data.filter((elem) => elem != item);
         setData(deleteData);
         }
+    const handleFilter=(value)=>{
+        console.log(value)
+        const searchData = copyData.filter((item)=> item.toUpperCase().includes(value.toUpperCase()))
+        setData(searchData)
+        console.log(searchData)
+    }
+
+
     return (
         <div>
+            <input type="text" placeholder="search bar"  onChange={(e)=>handleFilter(e.target.value)} />
             <h1>📝 This is Todo list</h1>
             <h4>😎To double tap on text To-do to remove list of Todo</h4>
                <TextField id="a" 

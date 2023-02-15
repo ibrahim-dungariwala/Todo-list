@@ -1,4 +1,4 @@
-li:nth-child(odd){
+/* li:nth-child(odd){
     color: red;
   }
   li:nth-child(even){
@@ -16,4 +16,5 @@ li:nth-child(odd){
     width: 500px;
     box-shadow: 2px 2px 10px;
   }  
-  .a{font-size: 20px;}
+  .a{font-size: 20px;} */
+  .App{ text-align: center;}
